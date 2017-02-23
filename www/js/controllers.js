@@ -74,7 +74,7 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log('we be creatin a trip for this child')
     $http({
         method: "PATCH",
-        url: ("http://localhost:3000/child/" + $stateParams.childId),
+        url: ("/child/" + $stateParams.childId),
         data: {}
         //we are going to return child.parent = parent.id
     }).then(function mySuccess(response) {
@@ -96,7 +96,7 @@ angular.module('starter.controllers', ['ngCordova'])
         var coordinates = {lat: $scope.lat, long: $scope.long}
         $http({
             method : "PATCH",
-            url : ("http://localhost:3000/child/" + $stateParams.childId + "/" + $stateParams.tripId),
+            url : ("/child/" + $stateParams.childId + "/" + $stateParams.tripId),
             data: coordinates
         }).then(function mySuccess(response) {
             console.log("success")
@@ -160,7 +160,7 @@ angular.module('starter.controllers', ['ngCordova'])
 
 .controller('ChildCtrl', function($scope, $cordovaGeolocation, $stateParams, $http, $state) {
 
-  $http.get("http://localhost:3000/child/" + $stateParams.id)
+  $http.get("/child/" + $stateParams.id)
     .then(function(response) {
       console.log(response.data);
         $scope.currentChild = response.data
@@ -172,7 +172,7 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log('we be creatin a child')
     $http({
         method: "POST",
-        url: ("http://localhost:3000/parent/" + $stateParams.id),
+        url: ("/parent/" + $stateParams.id),
         data: ($scope.newChild)
         //we are going to return child.parent = parent.id
     }).then(function mySuccess(response) {
@@ -187,7 +187,7 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log($stateParams.id);
     $http({
         method: "DELETE",
-        url: ("http://localhost:3000/child/" + $stateParams.id),
+        url: ("/child/" + $stateParams.id),
         //we are going to return child.parent = parent.id
     }).then(function mySuccess(response) {
     }, function myError(response) {
@@ -202,7 +202,7 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log($stateParams.id);
     $http({
         method: "DELETE",
-        url: ("http://localhost:3000/child/" + $stateParams.id + "/" + tripId),
+        url: ("/child/" + $stateParams.id + "/" + tripId),
         //we are going to return child.parent = parent.id
     }).then(function mySuccess(response) {
     }, function myError(response) {
@@ -215,7 +215,7 @@ angular.module('starter.controllers', ['ngCordova'])
 .controller('ParentCtrl', function($scope, $http, $stateParams) {
 console.log("ParentCtrl created");
 console.log($stateParams);
-  $http.get("http://localhost:3000/parent/" + $stateParams.id)
+  $http.get("/parent/" + $stateParams.id)
     .then(function(response) {
       console.log(response.data);
         $scope.currentParent = response.data
