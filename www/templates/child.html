@@ -8,7 +8,7 @@
       <h2 class='PageTitles'>Average top speed: 47 MPH   {{ currentChild.averageTopSpeed }}</h2>
       <div ng-repeat="t in currentChild.trips">
        <h3 style="color: black; font-weight: bold;">  {{ t }}</h3>
-       <button type="button" ng-click="deleteTrip(t._id)" class="padSubmitButton button button-assertive">Delete Trip</button>
+       <button type="button" ng-click="deleteTrip(t._id)" class="button button-assertive">Delete Trip</button>
      </div>
        <button ng-click="deleteChild()" type="button" class="button button-assertive">Delete Child</button>
     </div>

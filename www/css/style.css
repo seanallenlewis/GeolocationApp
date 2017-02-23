@@ -5,6 +5,9 @@
   margin: 20px;
 }
 
+.button{
+  margin: 5px;
+}
 .loginPadding{
   background: rgba(192,192,192,0.4);
   margin: auto;
