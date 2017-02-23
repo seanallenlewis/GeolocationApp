@@ -15,7 +15,7 @@ angular.module('starter.controllers', ['ngCordova'])
     console.log($scope.newParent);
     $http({
         method: "POST",
-        url: "http://localhost:3000/parent/",
+        url: "/parent/",
         data: $scope.newParent
         //we are going to return child.parent = parent.id
     }).then(function mySuccess(response) {
